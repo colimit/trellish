@@ -1,0 +1,11 @@
+<h1> Hello World </h1>
+
+<ul>
+<% boards.forEach(function(board){ %>
+	<li> <a href="/#<%= board.url() %>"><%= board.get("title") %></a> </li>
+<% }); %>
+</ul>
+
+<div id="new-board">
+
+</div>
