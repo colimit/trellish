@@ -1,8 +1,8 @@
-json.(board, :id, :title, :url, :created_at, :updated_at)
+json.(board, :id, :title, :created_at, :updated_at)
 
-cards ||= nil
-unless cards.nil?
-  json.cards(cards) do |card|
-    json.(card, :title, :description, :rank, :created_at, :updated_at, :list_id)
+lists ||= nil
+unless lists.nil?
+  json.lists(lists) do |list|
+	 json.partial!("lists/list", :list => list, :cards => list.cards)
   end
 end

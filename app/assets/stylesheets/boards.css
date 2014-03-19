@@ -10,13 +10,27 @@ li.list_entry, li.board_entry {
   margin: 3px;
   border-radius: 4px;
   border-radius: 4px;
-
   padding:6px 12px 8px 12px;
   font-size:18px;
   margin-bottom: 15px;
-  
-  float: left;;
+
+  float: left;
 }
+
+.cards {
+	float: left;
+}
+
+li.list_entry {
+	width: 150px;
+}
+
+.lists {
+	width: 1500px;
+}
+
+
+#new-list { clear: both;}
 
 button.newBoard {
   display: block;

@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   before_filter :require_login!
   
   def index
-    @boards = Board.includes(:lists, :cards).for_member(current_user)
+    @boards = Board.includes(:lists, :cards)#.for_member(current_user)
     
     @lists = []
     @boards.each { |board| @lists << board.lists }
@@ -10,13 +10,13 @@ class BoardsController < ApplicationController
     @cards = []
     @boards.each { |board| @cards << board.cards }
     @myID = current_user.id
-    render json: @boards
+    render "boards/index"
   end
   
   def show
     @board = Board.find(params[:id])
-    
-    render json: @board
+    @lists = @board.lists.includes(:cards)
+    render "boards/show"
   end
   
   def create

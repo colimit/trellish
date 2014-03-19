@@ -1,3 +1,3 @@
-json.array!(@board) do |board|
+json.array!(@boards) do |board|
   json.partial!("boards/board", :board => board)
-en
+end

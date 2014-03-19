@@ -19,7 +19,6 @@ Trellino.Routers.Router = Backbone.Router.extend({
 	
 	boardShow: function(id){
 		var board = Trellino.Collections.boards.getOrFetch(id);
-		debugger
 		var boardShow = new Trellino.Views.BoardShow({
 			model: board
 		});
